@@ -8,6 +8,15 @@ namespace csharp_fundamentals_control_flow.Main
 {
     public class Extension
     {
+        public object? calculateGramsOfSugar(string[] strings, int v)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object? estimatePrepTime(string[] strings, int v)
+        {
+            throw new NotImplementedException();
+        }
 
 
         /* 
@@ -39,6 +48,9 @@ namespace csharp_fundamentals_control_flow.Main
             The cake will need 100g of sugar per layer, if that ingredient is present in the provided list of ingredients.
             The method should return the number of grams of sugar needed to make the cake.
          */
-
+        public object? timerStatus(int v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
