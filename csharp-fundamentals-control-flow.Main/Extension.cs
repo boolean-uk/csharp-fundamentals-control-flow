@@ -8,8 +8,6 @@ namespace csharp_fundamentals_control_flow.Main
 {
     public class Extension
     {
-
-
         /* 
          Extension: 1.  We're going to improve our cake baking capabilities!
         //TODO: Create a public method named timerStatus that accepts one parameter:
@@ -18,7 +16,18 @@ namespace csharp_fundamentals_control_flow.Main
         "The cake is still baking!" if there are any remaining minutes left,
         and "The timer finished ages ago!" if the remaining minutes is a negative number
         */
-
+        public string timerStatus(int minutes)
+        {
+            if (minutes == 0)
+            {
+                return "The cake is ready!";
+            } else if (minutes > 0) 
+            {
+                return "The cake is still baking!";
+            } else {
+                return "The timer finished ages ago!";
+            }
+        }
 
 
 
@@ -30,7 +39,16 @@ namespace csharp_fundamentals_control_flow.Main
             If a prep time of 0 is provided, the method should assume each ingredient takes 2 minutes to prepare.
          */
 
-
+        public int estimatePrepTime(string[] ingredients, int minutes)
+        {
+            if (minutes == 0)
+            {
+                return ingredients.Length * 2;
+            } else
+            {
+                return ingredients.Length * minutes;
+            }
+        }
 
 
         //TODO: 3.  Create a method named calculateGramsOfSugar that accepts two parameters:
@@ -40,5 +58,14 @@ namespace csharp_fundamentals_control_flow.Main
             The method should return the number of grams of sugar needed to make the cake.
          */
 
+        public int calculateGramsOfSugar(string[] ingredients, int layers)
+        {
+            if (ingredients.Contains("sugar"))
+            {
+                return layers * 100;
+            }
+            return 0;
+        }
+       
     }
 }
