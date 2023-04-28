@@ -8,6 +8,8 @@ namespace csharp_fundamentals_control_flow.Main
 {
     public class Extension
     {
+       
+
 
 
         /* 
@@ -30,6 +32,19 @@ namespace csharp_fundamentals_control_flow.Main
             If a prep time of 0 is provided, the method should assume each ingredient takes 2 minutes to prepare.
          */
 
+        public int estimatePrepTime(string[] strings, int v)
+        {
+            int ingredients = strings.Length;
+            if (v == 0)
+            {
+                return ingredients * 2;
+            }
+            else
+            {
+                return ingredients * v;
+            }
+            throw new NotImplementedException();
+        }
 
 
 
@@ -40,5 +55,36 @@ namespace csharp_fundamentals_control_flow.Main
             The method should return the number of grams of sugar needed to make the cake.
          */
 
+
+        public object? calculateGramsOfSugar(string[] strings, int v)
+        {
+            if (strings.Contains("sugar"))
+            {
+                return v * 100;
+            }
+            else
+            {
+                return 0;
+            }
+            
+            throw new NotImplementedException();
+        }
+
+
+        public object? timerStatus(int v)
+        {
+            if (v ==0 )
+            {
+                return "The cake is ready!";
+            }else if (v > 0 ) {
+
+                return "The cake is still baking!";
+            }
+            else if (v < 0) 
+            {
+                return "The timer finished ages ago!";
+            }
+            throw new NotImplementedException();
+        }
     }
 }
