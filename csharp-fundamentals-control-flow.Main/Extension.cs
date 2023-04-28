@@ -18,6 +18,19 @@ namespace csharp_fundamentals_control_flow.Main
         "The cake is still baking!" if there are any remaining minutes left,
         and "The timer finished ages ago!" if the remaining minutes is a negative number
         */
+        public string timerStatus(int number)
+        {
+            if (number == 0)
+            {
+                return "The cake is ready!";
+            } else if (number >0)
+            {
+                return "The cake is still baking!";
+            } else
+            {
+                return "The timer finished ages ago!";
+            }
+        }
 
 
 
@@ -29,7 +42,16 @@ namespace csharp_fundamentals_control_flow.Main
             provided and the prep time per ingredient.
             If a prep time of 0 is provided, the method should assume each ingredient takes 2 minutes to prepare.
          */
-
+        public int estimatePrepTime(string[] ingre, int number)
+        {
+            if (number == 0)
+            {
+                return 2 * ingre.Length;
+            } else
+            {
+                return number * ingre.Length;
+            }
+        }
 
 
 
@@ -39,6 +61,16 @@ namespace csharp_fundamentals_control_flow.Main
             The cake will need 100g of sugar per layer, if that ingredient is present in the provided list of ingredients.
             The method should return the number of grams of sugar needed to make the cake.
          */
+        public int calculateGramsOfSugar(string[] ingre, int number)
+        {
+            if (ingre.Contains("sugar"))
+            {
+                return number * 100;
+            } else
+            {
+                return 0;
+            }
+        }
 
     }
 }
