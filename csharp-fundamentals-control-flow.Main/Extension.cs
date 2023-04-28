@@ -8,17 +8,6 @@ namespace csharp_fundamentals_control_flow.Main
 {
     public class Extension
     {
-        public object? calculateGramsOfSugar(string[] strings, int v)
-        {
-            throw new NotImplementedException();
-        }
-
-        public object? estimatePrepTime(string[] strings, int v)
-        {
-            throw new NotImplementedException();
-        }
-
-
         /* 
          Extension: 1.  We're going to improve our cake baking capabilities!
         //TODO: Create a public method named timerStatus that accepts one parameter:
@@ -27,8 +16,15 @@ namespace csharp_fundamentals_control_flow.Main
         "The cake is still baking!" if there are any remaining minutes left,
         and "The timer finished ages ago!" if the remaining minutes is a negative number
         */
-
-
+        public string timerStatus(int time)
+        {
+            if (time == 0)
+            { return "The cake is ready!"; }
+            else if (time < 0) {
+                return "The timer finished ages ago!";
+            }
+            else { return "The cake is still baking!"; }
+        }
 
 
         //TODO: Extension: 2. Create a method named estimatePrepTime that accepts two parameters:
@@ -38,9 +34,17 @@ namespace csharp_fundamentals_control_flow.Main
             provided and the prep time per ingredient.
             If a prep time of 0 is provided, the method should assume each ingredient takes 2 minutes to prepare.
          */
-
-
-
+        public int estimatePrepTime(string[] ingredients, int timePerIngredient)
+        {
+            if (timePerIngredient == 0)
+            { 
+                return ingredients.Length * 2; 
+            }
+            else
+            {
+                return ingredients.Length * timePerIngredient;
+            }
+        }
 
         //TODO: 3.  Create a method named calculateGramsOfSugar that accepts two parameters:
         /*  - an array of ingredients that will always contain 3 ingredients
@@ -48,9 +52,17 @@ namespace csharp_fundamentals_control_flow.Main
             The cake will need 100g of sugar per layer, if that ingredient is present in the provided list of ingredients.
             The method should return the number of grams of sugar needed to make the cake.
          */
-        public object? timerStatus(int v)
+     
+        public int calculateGramsOfSugar(string[] ingredients, int cakeLayers)
         {
-            throw new NotImplementedException();
+            if (ingredients.Contains("sugar"))
+            {
+                return 100 * cakeLayers;
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }
