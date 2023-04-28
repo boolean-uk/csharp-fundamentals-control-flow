@@ -34,9 +34,9 @@ namespace csharp_fundamentals_control_flow.Test
             Assert.AreEqual(10, this.extension.estimatePrepTime(new String[] { "milk", "sugar", "eggs", "flour", "chocolate" }, 2));
             Assert.AreEqual(10, this.extension.estimatePrepTime(new String[] { "milk", "sugar", "eggs", "flour", "chocolate" }, 0));
             Assert.AreEqual(20, this.extension.estimatePrepTime(new String[] { "milk", "sugar" }, 10));
-        } 
-        
-        [Test] 
+        }
+
+        [Test]
         public void three()
         {
             Assert.AreEqual(0, this.extension.calculateGramsOfSugar(new String[] { "milk", "flour", "eggs" }, 3));
