@@ -20,7 +20,12 @@ namespace csharp_fundamentals_control_flow.Main
         */
         public string timerStatus(int minutes)
         {
-            throw new NotImplementedException();
+            if (minutes == 0)
+                return "The cake is ready!";
+            else if (minutes > 0)
+                return "The cake is still baking!";
+            else
+                return "The timer finished ages ago!";
         }
 
 
@@ -35,8 +40,9 @@ namespace csharp_fundamentals_control_flow.Main
 
 
         public int estimatePrepTime(string[] ingredients, int time)
-        { 
-            throw new NotImplementedException(); 
+        {
+            int perIngreTime = (time == 0) ? 2 : time; //check if time is zero, if time is zero then two is asigned to perIngreTime,otherwise the time is asigned to perIngreTime
+            return ingredients.Length * perIngreTime; // return the amount of ingredients multiplied by the prep time
         }
 
         //TODO: 3.  Create a method named calculateGramsOfSugar that accepts two parameters:
@@ -45,10 +51,18 @@ namespace csharp_fundamentals_control_flow.Main
             The cake will need 100g of sugar per layer, if that ingredient is present in the provided list of ingredients.
             The method should return the number of grams of sugar needed to make the cake.
          */
-
-        public int calculateGramsOfSugar(string[] ingredients, int time)
+        // https://learn.microsoft.com/en-us/dotnet/api/system.array.exists?view=net-7.0   used this one
+        public int calculateGramsOfSugar(string[] ingredients, int layers)
         {
-            throw new NotImplementedException();
+            bool hasItSugar = Array.Exists(ingredients, ingredient => ingredient.ToLower() == "sugar"); // Checking if sugar exists in array. ToLower to be sure the sugar is case-insinsitive
+            if (hasItSugar)
+            {
+                return layers * 100;      //for 100 gram is each layer
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }
