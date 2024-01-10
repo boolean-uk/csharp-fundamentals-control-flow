@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace csharp_fundamentals_control_flow.Main
+﻿namespace csharp_fundamentals_control_flow.Main
 {
     public class Extension
     {
-
+        //K: extension tasks done in previous task (methods)
 
         /* 
          Extension: 1.  We're going to improve our cake baking capabilities!
@@ -34,9 +28,9 @@ namespace csharp_fundamentals_control_flow.Main
          */
 
 
-        public int estimatePrepTime(string[] ingredients, int time)
-        { 
-            throw new NotImplementedException(); 
+        public int estimatePrepTime(string[] ingredients , int time)
+        {
+            throw new NotImplementedException();
         }
 
         //TODO: 3.  Create a method named calculateGramsOfSugar that accepts two parameters:
@@ -46,7 +40,7 @@ namespace csharp_fundamentals_control_flow.Main
             The method should return the number of grams of sugar needed to make the cake.
          */
 
-        public int calculateGramsOfSugar(string[] ingredients, int time)
+        public int calculateGramsOfSugar(string[] ingredients , int time)
         {
             throw new NotImplementedException();
         }
