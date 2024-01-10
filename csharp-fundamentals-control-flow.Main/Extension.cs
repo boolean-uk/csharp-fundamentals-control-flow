@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace csharp_fundamentals_control_flow.Main
 {
@@ -18,11 +20,26 @@ namespace csharp_fundamentals_control_flow.Main
         "The cake is still baking!" if there are any remaining minutes left,
         and "The timer finished ages ago!" if the remaining minutes is a negative number
         */
-        public string timerStatus(int minutes)
+        public string timerStatus(int v)
         {
-            throw new NotImplementedException();
-        }
 
+            string message;
+
+            switch (v)
+            {
+                case 0:
+                    message = "The cake is ready!"; break;
+
+                case > 0:
+                    message = "The cake is still baking!"; break;
+
+                case < 0:
+                    message = "The timer finished ages ago!"; break;
+            }
+
+            return message;
+
+        }
 
 
         //TODO: Extension: 2. Create a method named estimatePrepTime that accepts two parameters:
@@ -35,8 +52,17 @@ namespace csharp_fundamentals_control_flow.Main
 
 
         public int estimatePrepTime(string[] ingredients, int time)
-        { 
-            throw new NotImplementedException(); 
+        {
+            var elements = ingredients.Count();
+
+            if (time == 0)
+            {
+                time = 2;
+            }
+
+            var prepTime = elements * time;
+
+            return prepTime;
         }
 
         //TODO: 3.  Create a method named calculateGramsOfSugar that accepts two parameters:
@@ -48,7 +74,18 @@ namespace csharp_fundamentals_control_flow.Main
 
         public int calculateGramsOfSugar(string[] ingredients, int time)
         {
-            throw new NotImplementedException();
+            var sugarAmount = 0;
+
+            if (ingredients.Contains("sugar"))
+            {
+                sugarAmount = 100 * time;
+            }
+            else
+            {
+                sugarAmount = 0;
+            }
+
+            return sugarAmount;
         }
     }
 }
