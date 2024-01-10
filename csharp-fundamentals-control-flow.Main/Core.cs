@@ -48,61 +48,89 @@ namespace csharp_fundamentals_control_flow.Main
         // Change the returned value in the method below to your answer. It is case-sensitive.
         public string one()
         {
-            return "";
+            return "Good day!";
         }
 
         //TODO: 2. What will the output be if I run sayGoodMorning(true)?
         // Change the returned value in the method below to your answer. It is case-sensitive.
         public string two()
         {
-            return "";
+            return "Good morning!";
         }
 
         //TODO: 3. What will the output be if I run sayGoodMorning("Hello" == "Hello")?
         // Change the returned value in the method below to your answer. It is case-sensitive.
         public string three()
         {
-            return "";
+            return "Good morning!"; // fordi == true
         }
 
         //TODO: 4. What will the output be if I run sayGoodMorning("A word" != "Another word")
         public string four()
         {
-            return "";
+            return "Good morning!"; //false + false = true
         }
 
         // 5. What will the output be if I run sayGoodMorning(25 != 25)
         public string five()
         {
-            return "";
+            return "Good day!"; // er ikke lik
         }
 
         //TODO: 6. Use a conditional statement to return "Correct!" if the input is more than 7
         // or "Wrong!" if not
         public string six(int num)
         {
-            throw new NotImplementedException();
+            if(num > 7)
+            {
+                return "Correct!";
+            }
+            else
+            {
+                return "Wrong!";
+            }
         }
 
         //TODO: 7. Use a conditional statement to return "Correct!" if the input is false
         // or "Wrong!" if not
         public string seven(bool boolean)
         {
-            throw new NotImplementedException();
+            if(boolean != true)
+            {
+                return "Correct!";
+            }
+            else
+            {
+                return "Wrong!";
+            }
         }
 
         //TODO: 8. Use a conditional statement to return "Correct!" if numOne is more than or equal to numTwo
         // or "Wrong!" if not
         public string eight(int numOne, int numTwo)
         {
-            throw new NotImplementedException();
+            if (numOne >= numTwo)
+            {
+                return "Correct!";
+            }
+            else
+            {
+                return "Wrong!";
+            }
         }
 
         //TODO: 9. Use a conditional statement to return true if the array provided is not empty
         // or false if it is empty
         public bool nine(int[] nums)
         {
-            throw new NotImplementedException();
+            if(nums.Length == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         //TODO: 10. Use a conditional statement to return true if the provided string contains the word
@@ -110,7 +138,14 @@ namespace csharp_fundamentals_control_flow.Main
         // https://www.w3schools.com/java/java_ref_string.asp
         public bool ten(string sentence)
         {
-            throw new NotImplementedException();
+            if(sentence.Contains("milk"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         //TODO: 11. Use conditional statements to return the number 3 if the provided string contains
@@ -119,15 +154,38 @@ namespace csharp_fundamentals_control_flow.Main
         // Otherwise, return the number 0.
         public int eleven(string sentence)
         {
-            throw new NotImplementedException();
+            if (sentence.Contains("coffee"))
+            {
+                if (sentence.Contains("milk"))
+                {
+                    return 9;
+                }
+                else
+                {
+                    return 6;
+                }
+            }
+            else
+            {
+                if (sentence.Contains("milk"))
+                {
+                    return 3;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
         }
+
 
         //TODO: 12. Use conditional statements to return true if num is more than or equal to lower and is
         // less than or equal to upper, otherwise return false.
         public bool twelve(int num, int lower, int upper)
         {
-            throw new NotImplementedException();
+            return (num >= lower && num <= upper);
         }
+
 
         /*
             12. Use conditional statements to return a string based on what the age parameter is.
@@ -141,7 +199,27 @@ namespace csharp_fundamentals_control_flow.Main
          */
         public string thirteen(int age)
         {
-            throw new NotImplementedException();
+            if (age == 0)
+            {
+                return "Baby";
+            }
+            else if (age >= 1 && age <= 4)
+            {
+                return "Toddler";
+            }
+            else if (age >= 5 && age <= 12)
+            {
+                return "Child";
+            }
+            else if (age >= 13 && age <= 19)
+            {
+                return "Teenager";
+            }
+            else
+            {
+                return "Adult";
+            }
         }
+
     }
 }
