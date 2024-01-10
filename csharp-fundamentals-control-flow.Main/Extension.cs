@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,47 +9,58 @@ namespace csharp_fundamentals_control_flow.Main
 {
     public class Extension
     {
-
-
-        /* 
-         Extension: 1.  We're going to improve our cake baking capabilities!
-        //TODO: Create a public method named timerStatus that accepts one parameter:
+        //TODO: Extension 1: Cake Baking Abilities!
+        /*  1.
+        We're going to improve our cake baking capabilities!
+        Create a public method named timerStatus that accepts one parameter:
         - the number of minutes left on the timer
         The method must return "The cake is ready!" if the remaining minutes is 0,
         "The cake is still baking!" if there are any remaining minutes left,
         and "The timer finished ages ago!" if the remaining minutes is a negative number
-        */
-        public string timerStatus(int minutes)
+     */
+        public string timerStatus(int v)
         {
-            throw new NotImplementedException();
+            if (v == 0) { return "The cake is ready!"; }
+            else if (v > 0) { return "The cake is still baking!"; }
+            else { return "The timer finished ages ago!"; }
         }
 
 
-
-        //TODO: Extension: 2. Create a method named estimatePrepTime that accepts two parameters:
-        /*  - an array of ingredients, e.g. ["sugar", "milk", "flour", "eggs"]
+        //TODO: Extension 2: Estimate Prep Time
+        /*  
+            Create a method named estimatePrepTime that accepts two parameters:
+            - an array of ingredients, e.g. ["sugar", "milk", "flour", "eggs"]
             - the prep time per ingredient in minutes
             The method must return the total prep time required based on the number of ingredients
             provided and the prep time per ingredient.
             If a prep time of 0 is provided, the method should assume each ingredient takes 2 minutes to prepare.
          */
 
-
-        public int estimatePrepTime(string[] ingredients, int time)
-        { 
-            throw new NotImplementedException(); 
+        public int estimatePrepTime(string[] strings, int v)
+        {
+            //if V is 0, mutiply the amount of ingredients by 2 to get the prep time, else multiply by the given integer (v)
+            return (v == 0) ? strings.Length * 2 : strings.Length * v;
         }
 
-        //TODO: 3.  Create a method named calculateGramsOfSugar that accepts two parameters:
-        /*  - an array of ingredients that will always contain 3 ingredients
+
+
+        //TODO: Extension 3: calculateGramsOfSugar that accepts two parameters 1 an array of ingredients that will always contain 3 ingredients AND  2 the number of layers the cake has. The cake will need 100g of sugar per layer, if that ingredient is present in the provided list of ingredients.             The method should return the number of grams of sugar needed to make the cake.
+        /*  3.
+            Create a method named calculateGramsOfSugar that accepts two parameters:
+            - an array of ingredients that will always contain 3 ingredients
             - the number of layers the cake has
             The cake will need 100g of sugar per layer, if that ingredient is present in the provided list of ingredients.
             The method should return the number of grams of sugar needed to make the cake.
          */
 
-        public int calculateGramsOfSugar(string[] ingredients, int time)
+        public int calculateGramsOfSugar(string[] strings, int v)
         {
-            throw new NotImplementedException();
+            //check if the array has "Sugar", multiply the layers by 100 if yes, return 0 if no
+            return (strings.Contains("sugar")) ? 100 * v : 0;
         }
+
+
+
+
     }
 }
