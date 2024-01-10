@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace csharp_fundamentals_control_flow.Main
 {
@@ -20,7 +22,10 @@ namespace csharp_fundamentals_control_flow.Main
         */
         public string timerStatus(int minutes)
         {
-            throw new NotImplementedException();
+            string message = "The timer finished ages ago!";
+            if (minutes == 0) message = "The cake is ready!";
+            else if (minutes > 0) message = "The cake is still baking!";
+            return message;
         }
 
 
@@ -35,8 +40,10 @@ namespace csharp_fundamentals_control_flow.Main
 
 
         public int estimatePrepTime(string[] ingredients, int time)
-        { 
-            throw new NotImplementedException(); 
+        {
+            int returnTime = ingredients.Length * time;
+            if (time == 0) returnTime = ingredients.Length * 2;
+            return returnTime;
         }
 
         //TODO: 3.  Create a method named calculateGramsOfSugar that accepts two parameters:
@@ -48,7 +55,10 @@ namespace csharp_fundamentals_control_flow.Main
 
         public int calculateGramsOfSugar(string[] ingredients, int time)
         {
-            throw new NotImplementedException();
+            bool hasSugar = ingredients.Contains("sugar");
+            int sugarNeeded = 0;
+            if (hasSugar) sugarNeeded = time * 100;
+            return sugarNeeded;
         }
     }
 }
