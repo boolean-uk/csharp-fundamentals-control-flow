@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,61 +49,94 @@ namespace csharp_fundamentals_control_flow.Main
         // Change the returned value in the method below to your answer. It is case-sensitive.
         public string one()
         {
-            return "";
+            return "Good day!";
         }
 
         //TODO: 2. What will the output be if I run sayGoodMorning(true)?
         // Change the returned value in the method below to your answer. It is case-sensitive.
         public string two()
         {
-            return "";
+            return "Good morning!";
         }
 
         //TODO: 3. What will the output be if I run sayGoodMorning("Hello" == "Hello")?
         // Change the returned value in the method below to your answer. It is case-sensitive.
         public string three()
         {
-            return "";
+            return "Good morning!";
         }
 
         //TODO: 4. What will the output be if I run sayGoodMorning("A word" != "Another word")
         public string four()
         {
-            return "";
+            return "Good morning!";
         }
 
         // 5. What will the output be if I run sayGoodMorning(25 != 25)
         public string five()
         {
-            return "";
+            return "Good day!";
         }
 
         //TODO: 6. Use a conditional statement to return "Correct!" if the input is more than 7
         // or "Wrong!" if not
         public string six(int num)
         {
-            throw new NotImplementedException();
+            string answer = "";
+
+            if (num > 7)
+            {
+                answer = "Correct!";
+            }
+            else
+            {
+                answer = "Wrong!";
+            }
+            return answer;
         }
 
         //TODO: 7. Use a conditional statement to return "Correct!" if the input is false
         // or "Wrong!" if not
         public string seven(bool boolean)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            if (boolean)
+            {
+                return "Wrong!";
+            }
+            else 
+            { 
+                return "Correct!";
+            }
         }
 
         //TODO: 8. Use a conditional statement to return "Correct!" if numOne is more than or equal to numTwo
         // or "Wrong!" if not
         public string eight(int numOne, int numTwo)
         {
-            throw new NotImplementedException();
+            if ((numOne == numTwo) || (numOne > numTwo))
+            {
+                return "Correct!";
+            }
+            else
+            {
+                return "Wrong!";
+            }
         }
 
         //TODO: 9. Use a conditional statement to return true if the array provided is not empty
         // or false if it is empty
         public bool nine(int[] nums)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            bool boolToReturn = true;
+
+            if (nums.Length == 0)
+            {
+                boolToReturn = false;
+            }
+
+            return boolToReturn;
         }
 
         //TODO: 10. Use a conditional statement to return true if the provided string contains the word
@@ -110,7 +144,14 @@ namespace csharp_fundamentals_control_flow.Main
         // https://www.w3schools.com/java/java_ref_string.asp
         public bool ten(string sentence)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            bool booleanToReturn = false;
+
+            if (sentence.Contains("milk"))
+            {
+                booleanToReturn = true;
+            }
+            return booleanToReturn;
         }
 
         //TODO: 11. Use conditional statements to return the number 3 if the provided string contains
@@ -119,14 +160,36 @@ namespace csharp_fundamentals_control_flow.Main
         // Otherwise, return the number 0.
         public int eleven(string sentence)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            int numberToReturn = 0;
+
+            if (sentence.Contains("milk") && !(sentence.Contains("coffee")))
+            {
+                numberToReturn = 3;
+            }
+            else if (!(sentence.Contains("milk")) && (sentence.Contains("coffee")))
+            {
+                numberToReturn = 6;
+            }
+            else if ((sentence.Contains("milk")) && (sentence.Contains("coffee")))
+            {
+                numberToReturn = 9;
+            }
+            return numberToReturn;
         }
 
         //TODO: 12. Use conditional statements to return true if num is more than or equal to lower and is
         // less than or equal to upper, otherwise return false.
         public bool twelve(int num, int lower, int upper)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            bool boolToReturn = false;
+
+            if ((num >= lower) && (num <= upper)) 
+            {
+                boolToReturn = true;
+            }
+            return boolToReturn;
         }
 
         /*
@@ -141,7 +204,35 @@ namespace csharp_fundamentals_control_flow.Main
          */
         public string thirteen(int age)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+
+            string category = "Null";
+
+            switch (age)
+            {
+                case int n when (n == 0):
+                    category = "Baby";
+                    break;
+
+                case int n when ((n >= 1) && (n <= 4)):
+                    category = "Toddler";
+                    break;
+
+                case int n when ((n >= 5) && (n <= 12)):
+                    category = "Child";
+                    break;
+
+                case int n when ((n >= 13) && (n <= 19)):
+                    category = "Teenager";
+                    break;
+
+                case int n when (n >= 20):
+                    category = "Adult";
+                    break;
+
+
+            }
+            return category;
         }
     }
 }
