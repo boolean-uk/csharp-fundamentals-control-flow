@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace csharp_fundamentals_control_flow.Main
 {
@@ -18,9 +20,22 @@ namespace csharp_fundamentals_control_flow.Main
         "The cake is still baking!" if there are any remaining minutes left,
         and "The timer finished ages ago!" if the remaining minutes is a negative number
         */
-        public string timerStatus(int minutes)
+        public string timerStatus(int v)
         {
-            throw new NotImplementedException();
+            string minutes = v.ToString();
+            //throw new NotImplementedException();
+            if (v > 0)
+            {
+                return "The cake is still baking!";
+            }
+            else if (v < 0)
+            {
+                return "The timer finished ages ago!";
+            }
+            else
+            {
+                return "The cake is ready!";
+            }
         }
 
 
@@ -34,9 +49,18 @@ namespace csharp_fundamentals_control_flow.Main
          */
 
 
-        public int estimatePrepTime(string[] ingredients, int time)
-        { 
-            throw new NotImplementedException(); 
+        public int estimatePrepTime(string[] strings, int v)
+        {
+            int preptimePerIngredient = v;
+
+            if (preptimePerIngredient == 0)
+            {
+                preptimePerIngredient = 2;
+            }
+
+            int totalPrepTime = strings.Length * preptimePerIngredient;
+
+            return totalPrepTime;
         }
 
         //TODO: 3.  Create a method named calculateGramsOfSugar that accepts two parameters:
@@ -46,9 +70,20 @@ namespace csharp_fundamentals_control_flow.Main
             The method should return the number of grams of sugar needed to make the cake.
          */
 
-        public int calculateGramsOfSugar(string[] ingredients, int time)
+        public int calculateGramsOfSugar(string[] strings, int v)
         {
-            throw new NotImplementedException();
+            int numberOfLayers = v;
+            string sugar = "sugar";
+            int sugarGrams = 100 * numberOfLayers;
+
+            if (Array.Exists(strings, element => element == sugar))
+            {
+                return sugarGrams;
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }
