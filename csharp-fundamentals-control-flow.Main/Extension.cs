@@ -18,9 +18,21 @@ namespace csharp_fundamentals_control_flow.Main
         "The cake is still baking!" if there are any remaining minutes left,
         and "The timer finished ages ago!" if the remaining minutes is a negative number
         */
-        public string timerStatus(int minutes)
+        public string timerStatus(int v)
         {
-            throw new NotImplementedException();
+            if (v > 0)
+            {
+                return "The cake is still baking!";
+            }
+            else if (v < 0)
+            {
+                return "The timer finished ages ago!";
+            }
+            else
+            {
+                return "The cake is ready!";
+            }
+
         }
 
 
@@ -34,9 +46,16 @@ namespace csharp_fundamentals_control_flow.Main
          */
 
 
-        public int estimatePrepTime(string[] ingredients, int time)
-        { 
-            throw new NotImplementedException(); 
+        public double estimatePrepTime(string[] strings, int v)
+        {
+            if (v == 0)
+            {
+                return strings.Length * 2;
+            }
+            else
+            {
+                return strings.Length * v;
+            }
         }
 
         //TODO: 3.  Create a method named calculateGramsOfSugar that accepts two parameters:
@@ -46,9 +65,16 @@ namespace csharp_fundamentals_control_flow.Main
             The method should return the number of grams of sugar needed to make the cake.
          */
 
-        public int calculateGramsOfSugar(string[] ingredients, int time)
+        public double calculateGramsOfSugar(string[] strings, int v)
         {
-            throw new NotImplementedException();
+            if (strings.Contains("sugar"))
+            {
+                return v * 100;
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }
