@@ -20,7 +20,12 @@ namespace csharp_fundamentals_control_flow.Main
         */
         public string timerStatus(int minutes)
         {
-            throw new NotImplementedException();
+            if (minutes == 0)
+                return "The cake is ready!";
+            else if (minutes > 0)
+                return "The cake is still baking!";
+            else
+                return "The timer finished ages ago!";
         }
 
 
