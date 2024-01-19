@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace csharp_fundamentals_control_flow.Main
+﻿namespace csharp_fundamentals_control_flow.Main
 {
     public class Extension
     {
@@ -20,7 +14,19 @@ namespace csharp_fundamentals_control_flow.Main
         */
         public string timerStatus(int minutes)
         {
-            throw new NotImplementedException();
+            if (minutes == 0)
+            {
+                return "The cake is ready!";
+            }
+            else if (minutes > 0)
+            {
+                return "The cake is still baking!";
+            }
+            else if (minutes < 0)
+            {
+                return "The timer finished ages ago!";
+            }
+            else { return "Error"; }
         }
 
 
@@ -35,8 +41,12 @@ namespace csharp_fundamentals_control_flow.Main
 
 
         public int estimatePrepTime(string[] ingredients, int time)
-        { 
-            throw new NotImplementedException(); 
+        {
+            if (time == 0)
+            {
+                time = 2;
+            }
+            return ingredients.Length * time;
         }
 
         //TODO: 3.  Create a method named calculateGramsOfSugar that accepts two parameters:
@@ -48,7 +58,14 @@ namespace csharp_fundamentals_control_flow.Main
 
         public int calculateGramsOfSugar(string[] ingredients, int time)
         {
-            throw new NotImplementedException();
+            if (ingredients.Contains("sugar"))
+            {
+                return time * 100;
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }
