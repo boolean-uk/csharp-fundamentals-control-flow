@@ -20,7 +20,15 @@ namespace csharp_fundamentals_control_flow.Main
         */
         public string timerStatus(int minutes)
         {
-            throw new NotImplementedException();
+            if (minutes == 0)
+            {
+                return "The cake is ready!";
+            } else if (minutes > 0){
+                return "The cake is still baking!";
+            } else
+            {
+                return "The timer finished ages ago!";
+            }
         }
 
 
@@ -35,8 +43,13 @@ namespace csharp_fundamentals_control_flow.Main
 
 
         public int estimatePrepTime(string[] ingredients, int time)
-        { 
-            throw new NotImplementedException(); 
+        {
+            int prepTime = time;
+            if (time == 0)
+            {
+              prepTime += 2;
+            }
+            return prepTime * ingredients.Length;
         }
 
         //TODO: 3.  Create a method named calculateGramsOfSugar that accepts two parameters:
@@ -46,9 +59,14 @@ namespace csharp_fundamentals_control_flow.Main
             The method should return the number of grams of sugar needed to make the cake.
          */
 
-        public int calculateGramsOfSugar(string[] ingredients, int time)
+        public int calculateGramsOfSugar(string[] ingredients, int layers)
         {
-            throw new NotImplementedException();
+            if (ingredients.Contains("sugar"))
+            {
+               return layers * 100;
+            }
+            // default return statement of 0, if sugar is not in the list of ingredients.
+            return 0;
         }
     }
 }
