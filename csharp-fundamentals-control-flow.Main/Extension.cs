@@ -40,8 +40,26 @@ namespace csharp_fundamentals_control_flow.Main
 
 
         public int estimatePrepTime(string[] ingredients, int time)
-        { 
-            throw new NotImplementedException(); 
+        {
+            int var = 0; 
+            foreach(string s in ingredients)
+            {
+               // if (time == 0)
+                //{ time = 2; }
+                //var = var + time;   
+
+                if (time != 0)
+                {
+                    time = time;
+                }
+                else
+                {
+                    time = 2;
+                }
+
+                var = var + time;
+            }
+            return var;
         }
 
         //TODO: 3.  Create a method named calculateGramsOfSugar that accepts two parameters:
@@ -53,7 +71,18 @@ namespace csharp_fundamentals_control_flow.Main
 
         public int calculateGramsOfSugar(string[] ingredients, int time)
         {
-            throw new NotImplementedException();
+            int sugar = 0;
+
+            foreach (string s in ingredients)
+            {
+                if (s == "sugar")
+                {
+                    sugar = 100;
+
+                }
+
+            }
+            return sugar*time;
         }
     }
 }
